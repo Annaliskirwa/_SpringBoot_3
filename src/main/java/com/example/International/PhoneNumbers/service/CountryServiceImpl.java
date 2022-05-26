@@ -4,6 +4,7 @@ import com.example.International.PhoneNumbers.entity.Country;
 import com.example.International.PhoneNumbers.repository.CountryRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public abstract class CountryServiceImpl implements CountryService{
     private final CountryRepository countryRepository;
@@ -32,11 +33,11 @@ public abstract class CountryServiceImpl implements CountryService{
     public void deleteCountry(Long countryId) {
         Country country =  countryRepository.findById(countryId).get();
         countryRepository.delete(country);
-
     }
 
     @Override
     public Country getCountryById(Long countryId) {
-        return null;
+        Optional<Country> result = countryRepository.findById(countryId);
+        return result.orElse(null);
     }
 }
