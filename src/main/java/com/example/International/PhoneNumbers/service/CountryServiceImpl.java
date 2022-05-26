@@ -1,13 +1,19 @@
 package com.example.International.PhoneNumbers.service;
 
 import com.example.International.PhoneNumbers.entity.Country;
+import com.example.International.PhoneNumbers.repository.CountryRepository;
 
 import java.util.List;
 
 public class CountryServiceImpl implements CountryService{
+    private final CountryRepository countryRepository;
+    public CountryServiceImpl(CountryRepository countryRepository){
+        super();
+        this.countryRepository = countryRepository;
+    }
     @Override
     public List<Country> getAllCountries() {
-        return null;
+        return countryRepository.findAll();
     }
 
     @Override
