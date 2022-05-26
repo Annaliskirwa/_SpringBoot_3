@@ -2,16 +2,17 @@ package com.example.International.PhoneNumbers.service;
 
 import com.example.International.PhoneNumbers.entity.Country;
 import com.example.International.PhoneNumbers.repository.CountryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-public abstract class CountryServiceImpl implements CountryService{
-    private final CountryRepository countryRepository;
-    public CountryServiceImpl(CountryRepository countryRepository){
-        super();
-        this.countryRepository = countryRepository;
-    }
+@Service
+public class CountryServiceImpl implements CountryService{
+    @Autowired
+    private CountryRepository countryRepository;
+
     @Override
     public List<Country> getAllCountries() {
         return countryRepository.findAll();
@@ -29,6 +30,7 @@ public abstract class CountryServiceImpl implements CountryService{
 
         return countryRepository.save(country);
     }
+
     @Override
     public void deleteCountry(Long countryId) {
         Country country =  countryRepository.findById(countryId).get();
