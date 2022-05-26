@@ -5,7 +5,7 @@ import com.example.International.PhoneNumbers.repository.CountryRepository;
 
 import java.util.List;
 
-public class CountryServiceImpl implements CountryService{
+public abstract class CountryServiceImpl implements CountryService{
     private final CountryRepository countryRepository;
     public CountryServiceImpl(CountryRepository countryRepository){
         super();
@@ -20,14 +20,17 @@ public class CountryServiceImpl implements CountryService{
     public Country createCountry(Country country) {
         return countryRepository.save(country);
     }
-
     @Override
-    public Country updateCountry(Long countryId, Country country) {
-        return null;
-    }
+    public Country updateCountry(Long countryId, Country countryUpdate) {
+        Country country = countryRepository.findById(countryId).get();
+        country.setCountryCode(countryUpdate.getCountryCode());
+        country.setCountryName(countryUpdate.getCountryName());
 
+        return countryRepository.save(country);
+    }
     @Override
     public void deleteCountry(Long countryId) {
+
 
     }
 
