@@ -41,4 +41,7 @@ public class PhoneNumber {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    @OneToOne
+    @JoinColumn(name = "countryId")
+    private Country country;
 }
