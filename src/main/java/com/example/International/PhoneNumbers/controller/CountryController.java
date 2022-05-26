@@ -28,7 +28,11 @@ public class CountryController {
         return countryService.createCountry(country);
     }
     @PutMapping("/countries/{id}")
-    public Country updateCountry(@PathVariable("id") Long countryId, @Valid @RequestBody Country country){
+        public Country updateCountry(@PathVariable("id") Long countryId, @Valid @RequestBody Country country){
         return countryService.updateCountry(countryId,country);
+    }
+    @GetMapping("/countries/{id}")
+    public Country getCountryById(@PathVariable("id") Long countryId){
+        return countryService.getCountryById(countryId);
     }
 }
