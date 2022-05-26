@@ -18,7 +18,7 @@ public class CountryServiceImpl implements CountryService{
 
     @Override
     public Country createCountry(Country country) {
-        return null;
+        return countryRepository.save(country);
     }
 
     @Override
