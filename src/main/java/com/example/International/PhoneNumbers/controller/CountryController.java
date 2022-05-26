@@ -3,11 +3,10 @@ package com.example.International.PhoneNumbers.controller;
 import com.example.International.PhoneNumbers.entity.Country;
 import com.example.International.PhoneNumbers.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.International.PhoneNumbers.repository.CountryRepository;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,5 +22,9 @@ public class CountryController {
     public List<Country> getAllCountries(){
         return countryService.getAllCountries();
 
+    }
+    @PostMapping("/countries")
+    public Country createCountry(@Valid @RequestBody Country country){
+        return countryService.createCountry(country);
     }
 }
