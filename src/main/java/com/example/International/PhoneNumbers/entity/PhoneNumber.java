@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class PhoneNumber {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long phoneId;
 
     @Column(name = "phoneNumber", nullable = false)
@@ -38,5 +38,5 @@ public class PhoneNumber {
     }
     @OneToOne
     @JoinColumn(name = "countryId", referencedColumnName = "countryId")
-    private CountryName country;
+    private Country country;
 }
