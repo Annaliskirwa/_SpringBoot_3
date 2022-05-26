@@ -13,6 +13,6 @@ public interface CountryService {
     Country createCountry(Country country);
     Country updateCountry(Long countryId, Country country);
 
-    void deleteCountry(Long countryId);
+    String deleteCountry(Long countryId);
     Country getCountryById(Long countryId);
 }

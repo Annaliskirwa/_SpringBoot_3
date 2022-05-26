@@ -32,9 +32,10 @@ public class CountryServiceImpl implements CountryService{
     }
 
     @Override
-    public void deleteCountry(Long countryId) {
+    public String deleteCountry(Long countryId) {
         Country country =  countryRepository.findById(countryId).get();
         countryRepository.delete(country);
+        return ("country has been deleted");
     }
 
     @Override
