@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "COUNTRY")
 @NoArgsConstructor
-@Builder
 @Data
 public class Country {
     @Id

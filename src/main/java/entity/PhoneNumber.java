@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "PHONENUMBER")
 @NoArgsConstructor
-@Builder
 @Data
 public class PhoneNumber {
     @Id
