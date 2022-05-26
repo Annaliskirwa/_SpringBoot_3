@@ -1,4 +1,4 @@
-package model;
+package com.example.International.PhoneNumbers.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,9 +1,6 @@
-package entity;
+package com.example.International.PhoneNumbers.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -11,7 +8,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "PHONENUMBER")
 @NoArgsConstructor
-@Data
 public class PhoneNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,6 +37,6 @@ public class PhoneNumber {
         this.phoneNumber = phoneNumber;
     }
     @OneToOne
-    @JoinColumn(name = "countryId")
-    private Country country;
+    @JoinColumn(name = "countryId", referencedColumnName = "countryId")
+    private CountryName country;
 }

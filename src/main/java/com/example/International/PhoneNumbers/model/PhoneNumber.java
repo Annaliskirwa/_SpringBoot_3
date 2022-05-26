@@ -1,4 +1,4 @@
-package model;
+package com.example.International.PhoneNumbers.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class PhoneNumber {
     private long phoneId;
     private String phoneNumber;
