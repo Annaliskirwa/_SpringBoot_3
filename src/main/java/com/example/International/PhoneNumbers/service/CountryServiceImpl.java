@@ -30,7 +30,8 @@ public abstract class CountryServiceImpl implements CountryService{
     }
     @Override
     public void deleteCountry(Long countryId) {
-
+        Country country =  countryRepository.findById(countryId).get();
+        countryRepository.delete(country);
 
     }
 
