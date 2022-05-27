@@ -29,4 +29,8 @@ public class PhoneNumberController {
     public PhoneNumber updatePhoneNumber(@PathVariable(name = "id") Long phoneId, @Valid @RequestBody PhoneNumber phoneNumber ){
         return phoneNumberService.updatePhoneNumber(phoneId, phoneNumber);
     }
+    @GetMapping("/phoneNumber/{id}")
+    public PhoneNumber getPhoneById(@PathVariable("id") Long phoneId){
+        return phoneNumberService.getPhoneById(phoneId);
+    }
 }
