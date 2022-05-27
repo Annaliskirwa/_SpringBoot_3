@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PhoneNumberServiceImpl implements  PhoneNumberService{
@@ -38,6 +39,7 @@ public class PhoneNumberServiceImpl implements  PhoneNumberService{
 
     @Override
     public PhoneNumber getPhoneById(Long phoneId) {
-        return null;
+        Optional<PhoneNumber> result = phoneNumberRepository.findById(phoneId);
+        return result.orElse(null);
     }
 }
