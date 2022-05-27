@@ -33,4 +33,8 @@ public class PhoneNumberController {
     public PhoneNumber getPhoneById(@PathVariable("id") Long phoneId){
         return phoneNumberService.getPhoneById(phoneId);
     }
+    @DeleteMapping("/phoneNumber/{id}")
+    public String deletePhoneNumber(@PathVariable("id") Long phoneId){
+        return phoneNumberService.deletePhoneNumber(phoneId);
+    }
 }
