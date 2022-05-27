@@ -31,7 +31,9 @@ public class PhoneNumberServiceImpl implements  PhoneNumberService{
 
     @Override
     public String deletePhoneNumber(Long phoneId) {
-        return null;
+        PhoneNumber phoneNumber = phoneNumberRepository.findById(phoneId).get();
+        phoneNumberRepository.delete(phoneNumber);
+        return ("The phone number has been deleted");
     }
 
     @Override
