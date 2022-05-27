@@ -14,7 +14,7 @@ public class PhoneNumberServiceImpl implements  PhoneNumberService{
 
     @Override
     public List<PhoneNumber> getAllPhoneNumbers() {
-        return null;
+        return phoneNumberRepository.findAll();
     }
 
     @Override
