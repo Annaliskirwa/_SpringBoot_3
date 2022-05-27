@@ -25,4 +25,8 @@ public class PhoneNumberController {
     public PhoneNumber addPhoneNumber(@Valid @RequestBody PhoneNumber phoneNumber){
         return phoneNumberService.addPhoneNumber(phoneNumber);
     }
+    @PutMapping("/phoneNumber/{id}")
+    public PhoneNumber updatePhoneNumber(@PathVariable(name = "id") Long phoneId, @Valid @RequestBody PhoneNumber phoneNumber ){
+        return phoneNumberService.updatePhoneNumber(phoneId, phoneNumber);
+    }
 }
