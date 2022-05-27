@@ -19,7 +19,7 @@ public class PhoneNumberServiceImpl implements  PhoneNumberService{
 
     @Override
     public PhoneNumber addPhoneNumber(PhoneNumber phoneNumber) {
-        return null;
+        return phoneNumberRepository.save(phoneNumber);
     }
 
     @Override
