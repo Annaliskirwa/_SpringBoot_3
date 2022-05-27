@@ -23,8 +23,10 @@ public class PhoneNumberServiceImpl implements  PhoneNumberService{
     }
 
     @Override
-    public PhoneNumber updatePhoneNumber(Long phoneId, PhoneNumber phoneNumber) {
-        return null;
+    public PhoneNumber updatePhoneNumber(Long phoneId, PhoneNumber phoneNumberUpdate) {
+        PhoneNumber phoneNumber = phoneNumberRepository.findById(phoneId).get();
+        phoneNumber.setPhoneNumber(phoneNumberUpdate.getPhoneNumber());
+        return phoneNumberRepository.save(phoneNumber);
     }
 
     @Override
