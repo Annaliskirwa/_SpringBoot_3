@@ -1,13 +1,12 @@
 package com.example.International.PhoneNumbers.controller;
 
-import com.example.International.PhoneNumbers.model.PhoneNumber;
+import com.example.International.PhoneNumbers.entity.PhoneNumber;
 import com.example.International.PhoneNumbers.repository.PhoneNumberRepository;
 import com.example.International.PhoneNumbers.service.PhoneNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,6 +19,10 @@ public class PhoneNumberController {
 
     @GetMapping("/phoneNumber")
     public List<PhoneNumber> getAllPhoneNumbers(){
-        phoneNumberService.getAllPhoneNumbers();
+        return phoneNumberService.getAllPhoneNumbers();
+    }
+    @PostMapping("/phoneNumber")
+    public PhoneNumber addPhoneNumber(@Valid @RequestBody PhoneNumber phoneNumber){
+        return phoneNumberService.addPhoneNumber(phoneNumber);
     }
 }
