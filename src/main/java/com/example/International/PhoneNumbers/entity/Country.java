@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "COUNTRY")
@@ -50,4 +51,8 @@ public class Country{
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
+
+    @OneToMany(mappedBy = "country")
+    private List<PhoneNumber > phoneNumber;
+
 }
