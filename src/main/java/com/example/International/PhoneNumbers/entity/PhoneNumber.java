@@ -39,4 +39,12 @@ public class PhoneNumber {
     @ManyToOne
     @JoinColumn(name = "countryId", referencedColumnName = "countryId")
     private Country country;
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
 }
