@@ -1,6 +1,5 @@
 package com.example.International.PhoneNumbers.controller;
 
-import com.example.International.PhoneNumbers.entity.Country;
 import com.example.International.PhoneNumbers.entity.PhoneNumber;
 import com.example.International.PhoneNumbers.repository.PhoneNumberRepository;
 import com.example.International.PhoneNumbers.service.PhoneNumberService;
@@ -23,7 +22,7 @@ public class PhoneNumberController {
         return phoneNumberService.getAllPhoneNumbers();
     }
     @PostMapping("/phoneNumber")
-    public PhoneNumber addPhoneNumber(@Valid @RequestBody PhoneNumber phoneNumber ){
+    public PhoneNumber addPhoneNumber(@Valid @RequestBody PhoneNumber phoneNumber){
         return phoneNumberService.addPhoneNumber(phoneNumber);
     }
     @PutMapping("/phoneNumber/{id}")

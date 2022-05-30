@@ -8,10 +8,7 @@ import java.util.List;
 @Service
 public interface PhoneNumberService {
     List<PhoneNumber> getAllPhoneNumbers();
-//    PhoneNumber addPhoneNumber(PhoneNumber phoneNumber);
-
-    PhoneNumber addPhoneNumber(PhoneNumber phoneNumber, Long countryId);
-
+    PhoneNumber addPhoneNumber(PhoneNumber phoneNumber);
     PhoneNumber updatePhoneNumber(Long phoneId, PhoneNumber phoneNumber);
     String deletePhoneNumber(Long phoneId);
     PhoneNumber getPhoneById(Long phoneId);
