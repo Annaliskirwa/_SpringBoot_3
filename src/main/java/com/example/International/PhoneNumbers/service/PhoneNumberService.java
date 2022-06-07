@@ -15,7 +15,7 @@ public interface PhoneNumberService {
 
     //non jpa
 //    int count();
-//    List<PhoneNumber> listByCountry(String countryName);
+//    List<PhoneNumber> listByCountry(Long countryId);
 
 
 }

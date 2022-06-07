@@ -1,6 +1,9 @@
 package com.example.International.PhoneNumbers.service;
 
+import com.example.International.PhoneNumbers.dto.PhoneNumberDto;
+import com.example.International.PhoneNumbers.entity.Country;
 import com.example.International.PhoneNumbers.entity.PhoneNumber;
+import com.example.International.PhoneNumbers.repository.CountryRepository;
 import com.example.International.PhoneNumbers.repository.PhoneNumberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +15,8 @@ import java.util.Optional;
 public class PhoneNumberServiceImpl implements  PhoneNumberService{
     @Autowired
     private PhoneNumberRepository phoneNumberRepository;
+    @Autowired
+    private CountryRepository countryRepository;
 
     @Override
     public List<PhoneNumber> getAllPhoneNumbers() {
@@ -42,4 +47,6 @@ public class PhoneNumberServiceImpl implements  PhoneNumberService{
         Optional<PhoneNumber> result = phoneNumberRepository.findById(phoneId);
         return result.orElse(null);
     }
+
+
 }
