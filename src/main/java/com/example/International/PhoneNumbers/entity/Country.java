@@ -52,7 +52,7 @@ public class Country{
         this.countryCode = countryCode;
     }
 
-    @OneToMany(mappedBy = "country")
-    private List<PhoneNumber > phoneNumber;
+//    @OneToMany(mappedBy = "country")
+//    private List<PhoneNumber > phoneNumber;
 
 }

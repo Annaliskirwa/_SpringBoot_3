@@ -36,7 +36,7 @@ public class PhoneNumber {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "countryId", referencedColumnName = "countryId")
     private Country country;
 
