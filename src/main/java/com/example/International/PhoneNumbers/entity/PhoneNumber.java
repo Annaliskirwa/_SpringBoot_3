@@ -1,14 +1,21 @@
 package com.example.International.PhoneNumbers.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "PHONENUMBER")
 @NoArgsConstructor
-public class PhoneNumber {
+@AllArgsConstructor
+public class PhoneNumber implements Serializable {
+    @Serial
+    private static final long serialVersionUID = -2092489523494435974L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long phoneId;
@@ -36,8 +43,9 @@ public class PhoneNumber {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "countryId", referencedColumnName = "countryId")
+//    @JsonIgnoreProperties({"countryName"})
     private Country country;
 
     public Country getCountry() {

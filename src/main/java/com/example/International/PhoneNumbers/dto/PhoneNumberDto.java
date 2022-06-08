@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class PhoneNumberDto {
-//    private PhoneNumber phoneNumber;
-//    private Country country;
+    private String phoneNumber;
+    private Long countryId;
 
 }

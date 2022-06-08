@@ -5,13 +5,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "COUNTRY")
 @Data
 @NoArgsConstructor
-public class Country{
+public class Country implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -3784966700234315230L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long countryId;
