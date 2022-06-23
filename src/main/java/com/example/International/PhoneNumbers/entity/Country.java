@@ -57,7 +57,15 @@ public class Country implements Serializable {
         this.countryCode = countryCode;
     }
 
-//    @OneToMany(mappedBy = "country")
-//    private List<PhoneNumber > phoneNumber;
+    @Override
+    public String toString() {
+        return "Country{" +
+                "countryId=" + countryId +
+                ", countryName='" + countryName + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                '}';
+    }
+    @OneToMany(mappedBy = "country")
+    private List<PhoneNumber > phoneNumber;
 
 }

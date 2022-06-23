@@ -1,6 +1,7 @@
 package com.example.International.PhoneNumbers.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -43,10 +44,13 @@ public class PhoneNumber implements Serializable {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "countryId", referencedColumnName = "countryId")
-//    @JsonIgnoreProperties({"countryName"})
-    private Country country;
+//    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "countryId", referencedColumnName = "countryId")
+////    @JsonIgnoreProperties({"countryName"})
+//    private Country country;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    public Country country;
 
     public Country getCountry() {
         return country;

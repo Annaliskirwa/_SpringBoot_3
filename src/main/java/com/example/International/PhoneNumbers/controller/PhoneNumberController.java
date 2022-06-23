@@ -1,5 +1,6 @@
 package com.example.International.PhoneNumbers.controller;
 
+import com.example.International.PhoneNumbers.dto.PhoneNumberCreationDto;
 import com.example.International.PhoneNumbers.dto.PhoneNumberDto;
 import com.example.International.PhoneNumbers.entity.PhoneNumber;
 import com.example.International.PhoneNumbers.repository.PhoneNumberRepository;
@@ -40,6 +41,14 @@ public class PhoneNumberController {
     public PhoneNumber addPhoneNumber(@Valid @RequestBody PhoneNumber phoneNumber){
         return phoneNumberService.addPhoneNumber(phoneNumber);
     }
+//    @PostMapping("/phoneNumber")
+//    public @Valid PhoneNumberCreationDto addPhoneNumber(@Valid @RequestBody PhoneNumberCreationDto phoneNumberCreationDto){
+//        PhoneNumber phoneNumber1 = modelMapper.map(phoneNumberCreationDto, PhoneNumber.class);
+//        PhoneNumber phoneNumber = phoneNumberService.addPhoneNumber(phoneNumber1);
+//        PhoneNumberCreationDto phoneNumberCreationDto1 = modelMapper.map(phoneNumber, PhoneNumberCreationDto.class);
+//        return phoneNumberCreationDto;
+//    }
+
     @PutMapping("/phoneNumber/{id}")
     public PhoneNumber updatePhoneNumber(@PathVariable(name = "id") Long phoneId, @Valid @RequestBody PhoneNumber phoneNumber ){
         return phoneNumberService.updatePhoneNumber(phoneId, phoneNumber);
