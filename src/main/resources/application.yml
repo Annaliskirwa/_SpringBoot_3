@@ -2,3 +2,9 @@ spring:
   profiles:
     active: mysql
 
+server:
+  instance:
+    id: 2
+
+  port: 8081
+
